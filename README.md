@@ -21,6 +21,7 @@ _Create workflows that enable you to use Continuous Integration (CI) for your pr
   Encourage users to open new tabs for steps!
 -->
 ![Build Status](https://github.com/cschomer/test-with-actions/actions/workflows/ci.yml/badge.svg)
+![Build Status](https://img.shields.io/github/actions/workflow/status/cschomer/test-with-actions/ci.yml?branch=main)
 
 ## Step 1: Add a test workflow
 
