@@ -6,7 +6,7 @@ on:
       - main
 permissions:
   # Need `contents: read` to checkout the repository.
-  # Need `contents: write` to update the step metadata.
+  # Need `contents: write` to update the step metadata .
   contents: write
 jobs:
   add_badge:
