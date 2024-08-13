@@ -1,12 +1,12 @@
 name: Add Build Status Badge
-# This workflow adds a build status badge to the repository new
+# This workflow adds a build status badge to the repository
 on:
   push:
     branches:
       - main
 permissions:
   # Need `contents: read` to checkout the repository.
-  # Need `contents: write` to update the step metadata .
+  # Need `contents: write` to update the step metadata.
   contents: write
 jobs:
   add_badge:
@@ -26,6 +26,7 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git add build-status-badge.md
           git commit -m "Automated commit from GitHub Actions"
+          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
           git push
     env:
       GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
