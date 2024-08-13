@@ -1,5 +1,5 @@
 name: Add Build Status Badge
-
+# This workflow adds a build status badge to the repository
 on:
   push:
     branches:
