@@ -25,4 +25,4 @@ jobs:
           git commit -m "Add build status badge"
           git push
     env:
-      GITHUB_TOKEN: ${{ secrets.PAT_LTD_REPO }}
+      GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
