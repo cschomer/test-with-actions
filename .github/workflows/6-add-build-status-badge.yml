@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
-
+permissions:
+  # Need `contents: read` to checkout the repository.
+  # Need `contents: write` to update the step metadata.
+  contents: write
 jobs:
   add_badge:
     runs-on: ubuntu-latest
