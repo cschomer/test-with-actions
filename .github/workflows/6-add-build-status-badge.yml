@@ -18,6 +18,8 @@ jobs:
           echo "![Build Status](https://github.com/${{ github.repository }}/actions/workflows/ci.yml/badge.svg)" > build-status-badge.md
 
       - name: Commit and push build status badge
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --global user.email "coreyschomer@gmail.com"
           git config --global user.name "${{ github.actor }}"
