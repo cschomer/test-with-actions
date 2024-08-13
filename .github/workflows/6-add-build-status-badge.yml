@@ -24,3 +24,5 @@ jobs:
           git add build-status-badge.md
           git commit -m "Add build status badge"
           git push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
