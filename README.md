@@ -20,6 +20,7 @@ _Create workflows that enable you to use Continuous Integration (CI) for your pr
   Link to docs.github.com for further explanations.
   Encourage users to open new tabs for steps!
 -->
+![Build Status](https://github.com/<owner>/<repository>/actions/workflows/ci.yml/badge.svg)
 
 ## Step 1: Add a test workflow
 
