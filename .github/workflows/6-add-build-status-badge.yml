@@ -15,7 +15,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+      - name: Remove existing build status badge
+        run: |
+          if [ -f build-status-badge.md ]; then
+          rm build-status-badge.md
+          fi
       - name: Generate build status badge
         run: |
           echo "![Build Status](https://github.com/${{ github.repository }}/actions/workflows/ci.yml/badge.svg)" > build-status-badge.md
