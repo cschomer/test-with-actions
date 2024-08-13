@@ -4,14 +4,14 @@ on:
   push:
     branches:
       - main
-permissions:
-  # Need `contents: read` to checkout the repository.
-  # Need `contents: write` to update the step metadata.
-  contents: write
 jobs:
   add_badge:
     runs-on: ubuntu-latest
-
+    permissions:
+      # Need `contents: read` to checkout the repository.
+      # Need `contents: write` to update the step metadata.
+      contents: read
+      issues: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
