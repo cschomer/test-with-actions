@@ -16,16 +16,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate build status badge markdown
+      - name: Generate build status badge
         run: |
           echo "![Build Status](https://github.com/${{ github.repository }}/actions/workflows/ci.yml/badge.svg)" > build-status-badge.md
 
-      - name: Commit and push build status badge
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+      - name: Commit build status badge
         run: |
-          git config --global user.email "coreyschomer@gmail.com"
-          git config --global user.name "cschomer"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"          
+          git config --global user.name "${{ github.actor }}"
           git add build-status-badge.md
-          git commit -m "Update build status badge"
-          git push https://x-access-token:${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git commit -m "Automated commit from GitHub Actions"
+          git push
+    env:
+      GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
